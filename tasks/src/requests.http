@@ -9,10 +9,13 @@ content-type: application/json
     "title": "some value"
 }
 
-### update task status
+### Update task status
 PATCH http://localhost:5000/api/tasks/XL1HAy8aW6cP-XVAIPl5V
 Content-Type: application/json
 
 {
     "isDone": true
 }
+
+### Delete task
+DELETE http://localhost:5000/api/tasks/XL1HAy8aW6cP-XVAIPl5V

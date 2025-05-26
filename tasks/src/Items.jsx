@@ -3,13 +3,17 @@ import SingleItem from "./SingleItem";
 import customFetch from "./utils";
 
 const Items = () => {
-  const { isPending, data } = useQuery({
+  const { isPending, data, isError, error } = useQuery({
     queryKey: ["tasks"],
     queryFn: () => customFetch("/"),
   });
 
   if (isPending) {
     return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>There was an error...</p>;
   }
   return (
     <div className="items">
